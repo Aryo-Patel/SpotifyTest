@@ -103,15 +103,14 @@ router.post('/login', checkNotAuthenticated, (req, res, next) => {
 //POST       /api/auth/login-spotify
 //ACTION     Logs the user in via the spotify api
 //Public 
+
+/*
+This method should ideally get called, but the request is terminating on the frontend
+*/
 router.get('/login-spotify', checkNotAuthenticated, passport.authenticate('spotify', {
     showDialog: true,
 
 }));
-// client_id: process.env.SPOTIFY_CLIENT_ID,
-// response_type: 'code',
-
-// redirect_uri: 'http://localhost:3000/',
-// clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
 
 //POST       /api/auth/login-spotify/callback
 //ACTION     Logs the user in via the spotify api
